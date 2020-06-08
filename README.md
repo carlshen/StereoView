@@ -1,5 +1,7 @@
 # StereoView
 
+感谢原作者的库。我升级到了29版本，使用AndroidX。
+
 --The idea is from weibo.com
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-StereoView-green.svg?style=true)](https://android-arsenal.com/details/3/4058)

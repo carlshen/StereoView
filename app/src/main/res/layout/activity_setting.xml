@@ -20,7 +20,7 @@
         android:text="3D效果"
         android:textColor="@color/font_white"/>
 
-    <mr_immortalz.com.stereoview.custom.StereoView
+    <com.stereoview.custom.StereoView
         android:id="@+id/stereoView1"
         android:layout_width="300dp"
         android:layout_height="60dp">
@@ -49,7 +49,7 @@
                 android:inputType="textPassword"
                 android:textColorHint="@color/font_gray"/>
 
-            <mr_immortalz.com.stereoview.custom.RippleView
+            <com.stereoview.custom.RippleView
                 android:id="@+id/rv_password"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -81,7 +81,7 @@
                 android:hint="1"
                 android:textColorHint="@color/font_gray"/>
 
-            <mr_immortalz.com.stereoview.custom.RippleView
+            <com.stereoview.custom.RippleView
                 android:id="@+id/rv_email"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -114,7 +114,7 @@
                 android:textColorHint="@color/font_gray"
                 android:textSize="18sp"/>
 
-            <mr_immortalz.com.stereoview.custom.RippleView
+            <com.stereoview.custom.RippleView
                 android:id="@+id/rv_username"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -148,7 +148,7 @@
                 android:textColorHint="@color/font_gray"
                 android:textSize="18sp"/>
 
-            <mr_immortalz.com.stereoview.custom.RippleView
+            <com.stereoview.custom.RippleView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
@@ -178,7 +178,7 @@
                 android:textColorHint="@color/font_gray"
                 android:textSize="18sp"/>
 
-            <mr_immortalz.com.stereoview.custom.RippleView
+            <com.stereoview.custom.RippleView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
@@ -210,13 +210,13 @@
                 android:textColorHint="@color/font_gray"
                 android:textSize="18sp"/>
 
-            <mr_immortalz.com.stereoview.custom.RippleView
+            <com.stereoview.custom.RippleView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
                 app:normal="@drawable/icon_love"/>
         </LinearLayout>
-    </mr_immortalz.com.stereoview.custom.StereoView>
+    </com.stereoview.custom.StereoView>
 
     <TextView
         android:layout_width="match_parent"
@@ -225,7 +225,7 @@
         android:text="平面效果"
         android:textColor="@color/font_white"/>
 
-    <mr_immortalz.com.stereoview.custom.StereoView
+    <com.stereoview.custom.StereoView
         android:id="@+id/stereoView2"
         android:layout_width="300dp"
         android:layout_height="60dp">
@@ -253,7 +253,7 @@
                 android:inputType="textPassword"
                 android:textColorHint="@color/font_gray"/>
 
-            <mr_immortalz.com.stereoview.custom.RippleView
+            <com.stereoview.custom.RippleView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
@@ -283,7 +283,7 @@
                 android:hint="1"
                 android:textColorHint="@color/font_gray"/>
 
-            <mr_immortalz.com.stereoview.custom.RippleView
+            <com.stereoview.custom.RippleView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
@@ -314,7 +314,7 @@
                 android:textColorHint="@color/font_gray"
                 android:textSize="18sp"/>
 
-            <mr_immortalz.com.stereoview.custom.RippleView
+            <com.stereoview.custom.RippleView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
@@ -347,14 +347,14 @@
                 android:textColorHint="@color/font_gray"
                 android:textSize="18sp"/>
 
-            <mr_immortalz.com.stereoview.custom.RippleView
+            <com.stereoview.custom.RippleView
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
                 app:normal="@drawable/icon_love"/>
         </LinearLayout>
 
-    </mr_immortalz.com.stereoview.custom.StereoView>
+    </com.stereoview.custom.StereoView>
 
     <TextView
         android:id="@+id/tv_angle"

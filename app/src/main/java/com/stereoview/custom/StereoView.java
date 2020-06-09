@@ -17,10 +17,8 @@ import com.stereoview.utils.LogUtil;
 
 /**
  * Created by Mr_immortalZ on 2016/7/10.
- * email : mr_immortalz@qq.com
- * <p>
- * Editor: Ybao 2016/7/31
- * email : 392579823@qq.com
+ * Editor: carl shen 2020/6/31
+ * email : 2926711810@qq.com
  */
 public class StereoView extends ViewGroup {
 
@@ -45,7 +43,7 @@ public class StereoView extends ViewGroup {
     private boolean isAdding = false;//fling时正在添加新页面，在绘制时不需要开启camera绘制效果，否则页面会有闪动
     private int mCurScreen = 1;//记录当前item
     private IStereoListener iStereoListener;
-    private float mDownX, mDownY, mTempY;
+    private float mDownX, mDownY;
     private boolean isSliding = false;
 
     private State mState = State.Normal;
@@ -91,6 +89,7 @@ public class StereoView extends ViewGroup {
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         int childTop = 0;
+        LogUtil.m(" changed " + changed + " getChildCount() " + getChildCount());
         for (int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
             if (child.getVisibility() != GONE) {
@@ -109,7 +108,7 @@ public class StereoView extends ViewGroup {
             case MotionEvent.ACTION_DOWN:
                 isSliding = false;
                 mDownX = x;
-                mTempY = mDownY = y;
+                mDownY = y;
                 if (!mScroller.isFinished()) {
                     //当上一次滑动没有结束时，再次点击，强制滑动在点击位置结束
                     mScroller.setFinalY(mScroller.getCurrY());
@@ -182,10 +181,12 @@ public class StereoView extends ViewGroup {
     }
 
     public boolean isCanSliding(MotionEvent ev) {
-        float moveX;
-        float moveY;
-        moveX = ev.getX();
-        mTempY = moveY = ev.getY();
+        if (ev == null) {
+            return false;
+        }
+        float moveX = ev.getX();
+        float moveY = ev.getY();
+        //moveY - mDownY also ok; only support Y direction sliding;
         if (Math.abs(moveY - mDownX) > mTouchSlop && (Math.abs(moveY - mDownY) > (Math.abs(moveX - mDownX)))) {
             return true;
         }
@@ -221,6 +222,7 @@ public class StereoView extends ViewGroup {
         addCount = 0;
         startY = getScrollY();
         delta = mHeight * mStartScreen - getScrollY();
+        LogUtil.m(" startY " + startY + " delta " + delta + "  mState " + mState + " addCount " + addCount);
         duration = (Math.abs(delta)) * 4;
         mScroller.startScroll(0, startY, 0, delta, duration);
     }
@@ -244,6 +246,7 @@ public class StereoView extends ViewGroup {
         setScrollY(startY);
         //mScroller移动的距离
         delta = -(startY - mStartScreen * mHeight) - (addCount - 1) * mHeight;
+        LogUtil.m("前一页startY " + startY + " yVelocity " + yVelocity + " delta " + delta + "  getScrollY() " + getScrollY() + " addCount " + addCount);
         duration = (Math.abs(delta)) * 3;
         mScroller.startScroll(0, startY, 0, delta, duration);
         addCount--;
@@ -309,8 +312,8 @@ public class StereoView extends ViewGroup {
      * 把第一个item移动到最后一个item位置
      */
     private void addNext() {
-        mCurScreen = (mCurScreen + 1) % getChildCount();
         int childCount = getChildCount();
+        mCurScreen = (mCurScreen + 1) % childCount;
         View view = getChildAt(0);
         removeViewAt(0);
         addView(view, childCount - 1);
@@ -323,8 +326,8 @@ public class StereoView extends ViewGroup {
      * 把最后一个item移动到第一个item位置
      */
     private void addPre() {
-        mCurScreen = ((mCurScreen - 1) + getChildCount()) % getChildCount();
         int childCount = getChildCount();
+        mCurScreen = ((mCurScreen - 1) + childCount) % childCount;
         View view = getChildAt(childCount - 1);
         removeViewAt(childCount - 1);
         addView(view, 0);

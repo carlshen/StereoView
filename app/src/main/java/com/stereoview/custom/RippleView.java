@@ -10,6 +10,7 @@ import android.graphics.Region;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -19,7 +20,7 @@ import com.stereoview.R;
 
 /**
  * Created by Mr_immortalZ on 2016/7/14.
- * email : mr_immortalz@qq.com
+ * email : 2926711810@qq.com
  */
 public class RippleView extends View {
     private Paint maxPaint;
@@ -59,6 +60,7 @@ public class RippleView extends View {
     }
 
     private void init() {
+        Log.d("RippleView", "init------------ ");
         maxPaint = new Paint();
         maxPaint.setColor(getResources().getColor(R.color.bg_gray));
         minPaint = new Paint();
@@ -117,6 +119,7 @@ public class RippleView extends View {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
+        Log.d("RippleView", "dispatchTouchEvent------------ ");
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 getParent().requestDisallowInterceptTouchEvent(true);
@@ -146,6 +149,7 @@ public class RippleView extends View {
     }
 
     private void startRipple() {
+        Log.d("RippleView", "startRipple------------ ");
         if (rippleAnim == null) {
             rippleAnim = new RippleAnim();
         }
@@ -157,6 +161,7 @@ public class RippleView extends View {
 
             @Override
             public void onAnimationEnd(Animation animation) {
+                Log.d("RippleView", "onAnimationEnd------------ ");
                 if (iRippleAnimListener != null) {
                     iRippleAnimListener.onComplete(RippleView.this);
                 }

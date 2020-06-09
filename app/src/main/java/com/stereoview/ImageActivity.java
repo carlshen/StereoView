@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by Mr_immortalZ on 2016/7/15.
- * email : mr_immortalz@qq.com
+ * email : 2926711810@qq.com
  */
 public class ImageActivity extends AppCompatActivity {
     @Override

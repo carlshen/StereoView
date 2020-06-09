@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 /**
  * Created by Mr_immortalZ on 2016/7/15.
- * email : mr_immortalz@qq.com
+ * email : 2926711810@qq.com
  */
 public class ToastUtil {
     public static void showInfo(Context context, String info) {

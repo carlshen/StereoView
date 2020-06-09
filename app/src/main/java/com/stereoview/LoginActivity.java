@@ -80,6 +80,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 rvUsername.setiRippleAnimListener(new RippleView.IRippleAnimListener() {
                     @Override
                     public void onComplete(View view) {
+                        LogUtil.m("跳转完成 ");
                         stereoView.toPre();
                     }
                 });
@@ -88,6 +89,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 rvEmail.setiRippleAnimListener(new RippleView.IRippleAnimListener() {
                     @Override
                     public void onComplete(View view) {
+                        LogUtil.m("跳转完成 ");
                         stereoView.toPre();
                     }
                 });
@@ -96,6 +98,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 rvPassword.setiRippleAnimListener(new RippleView.IRippleAnimListener() {
                     @Override
                     public void onComplete(View view) {
+                        LogUtil.m("跳转完成 ");
                         stereoView.toPre();
                     }
                 });
